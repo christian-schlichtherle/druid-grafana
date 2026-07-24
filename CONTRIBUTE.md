@@ -8,10 +8,12 @@ For more technical information about backend plugins, refer to the documentation
 The unified development environment is built atop Docker containers, composed with Docker Compose v2. It provides a running Druid instance, a running Grafana instance (use druid/druid as username/password to login), and a toolbox container for building.
 
 ### Prerequisites
+
 - Docker with Compose v2 (use `docker compose` command)
 - The project automatically uses Docker Compose v2 syntax
 
 Any building is done within the `toolbox` container which includes:
+
 - Node.js 20 with latest npm
 - Go compiler
 - Git and other build tools

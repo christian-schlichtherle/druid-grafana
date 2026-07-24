@@ -21,4 +21,4 @@ export function normalizeData(data: Record<string, any>, namespaced: boolean, na
     .reduce((acc, item) => {
       return { ...acc, ...item };
     });
-};
+}

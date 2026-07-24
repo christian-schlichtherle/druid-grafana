@@ -36,9 +36,9 @@ export const DruidAuthSettings = (props: ConnectionSettingsProps) => {
           <Switch value={settings.basicAuth} name="basicAuth" onChange={onSettingChange} />
         </Field>
         {isHttps && (
-            <Field horizontal label="With mTLS" description="Enable mutual TLS authentication">
-              <Switch value={settings.mTLS} name="mTLS" onChange={onSettingChange} />
-            </Field>
+          <Field horizontal label="With mTLS" description="Enable mutual TLS authentication">
+            <Switch value={settings.mTLS} name="mTLS" onChange={onSettingChange} />
+          </Field>
         )}
       </FieldSet>
       {settings.basicAuth && <DruidBasicAuthSettings {...props} />}

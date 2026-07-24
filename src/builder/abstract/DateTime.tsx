@@ -7,7 +7,6 @@ import { css, cx } from '@emotion/css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-
 interface Props extends QueryBuilderFieldProps {
   format: string;
   time: boolean;

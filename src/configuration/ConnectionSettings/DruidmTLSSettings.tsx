@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import {SecretTextArea, FieldSet, Field, Switch} from '@grafana/ui';
+import { SecretTextArea, FieldSet, Field, Switch } from '@grafana/ui';
 import { ConnectionSettingsProps } from './types';
 
 export const DruidmTLSSettings = (props: ConnectionSettingsProps) => {
@@ -67,55 +67,46 @@ export const DruidmTLSSettings = (props: ConnectionSettingsProps) => {
     });
   };
   return (
-        <FieldSet label="mTLS Settings">
-          <Field
-            label="Client Certificate"
-          >
-            <SecretTextArea
-              name="cert"
-              type="password"
-              placeholder="the client certificate"
-              cols={100}
-              isConfigured={(secretSettingsFields && secretSettingsFields.mTLSCert) as boolean}
-              // @ts-ignore
-              onChange={onSettingChange}
-              onReset={onCertReset}
-            />
-          </Field>
-          <Field
-            label="Client Key"
-          >
-            <SecretTextArea
-              name="key"
-              type="password"
-              placeholder="the client key"
-              cols={100}
-              isConfigured={(secretSettingsFields && secretSettingsFields.mTLSKey) as boolean}
-              // @ts-ignore
-              onChange={onSettingChange}
-              onReset={onKeyReset}
-            />
-          </Field>
-          <Field
-            label="CA Certificate"
-          >
-            <SecretTextArea
-              name="ca"
-              type="password"
-              placeholder="the CA certificate"
-              cols={100}
-              isConfigured={(secretSettingsFields && secretSettingsFields.mTLSCa) as boolean}
-              // @ts-ignore
-              onChange={onSettingChange}
-              onReset={onCaReset}
-            />
-          </Field>
-            <Field
-                label="Use System CA Pool"
-                description="Use the system CA pool for TLS verification"
-            >
-              <Switch value={settings.mTLSUseSystemCaPool} name="use_system_ca_pool" onChange={onSettingChange} />
-            </Field>
-        </FieldSet>
+    <FieldSet label="mTLS Settings">
+      <Field label="Client Certificate">
+        <SecretTextArea
+          name="cert"
+          type="password"
+          placeholder="the client certificate"
+          cols={100}
+          isConfigured={(secretSettingsFields && secretSettingsFields.mTLSCert) as boolean}
+          // @ts-ignore
+          onChange={onSettingChange}
+          onReset={onCertReset}
+        />
+      </Field>
+      <Field label="Client Key">
+        <SecretTextArea
+          name="key"
+          type="password"
+          placeholder="the client key"
+          cols={100}
+          isConfigured={(secretSettingsFields && secretSettingsFields.mTLSKey) as boolean}
+          // @ts-ignore
+          onChange={onSettingChange}
+          onReset={onKeyReset}
+        />
+      </Field>
+      <Field label="CA Certificate">
+        <SecretTextArea
+          name="ca"
+          type="password"
+          placeholder="the CA certificate"
+          cols={100}
+          isConfigured={(secretSettingsFields && secretSettingsFields.mTLSCa) as boolean}
+          // @ts-ignore
+          onChange={onSettingChange}
+          onReset={onCaReset}
+        />
+      </Field>
+      <Field label="Use System CA Pool" description="Use the system CA pool for TLS verification">
+        <Switch value={settings.mTLSUseSystemCaPool} name="use_system_ca_pool" onChange={onSettingChange} />
+      </Field>
+    </FieldSet>
   );
 };

@@ -2,6 +2,13 @@
 # output, otherwise the CI drift guard (regenerate + git diff --exit-code) fails after `yarn fmt`.
 src/builder/query/sql/druidSqlDocs.ts
 
+# Auto-generated @grafana/create-plugin scaffolding — CLAUDE.md says not to edit it, and a scaffold
+# update would overwrite any reformatting anyway.
+.config/
+
+# Provisioned dashboard, written by Grafana's own export (1.5k lines of machine-generated JSON).
+docker/grafana/dashboards/dashboard.json
+
 # Build output
 dist/
 coverage/
