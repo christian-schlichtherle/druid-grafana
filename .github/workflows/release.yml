@@ -16,9 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # build-plugin installs Go with GOTOOLCHAIN=local, so it cannot fetch a newer toolchain
+      # on demand. Pass the version required by go.mod instead of relying on its default.
+      - name: Read Go version from go.mod
+        id: go
+        run: echo "version=$(awk '/^go /{print $2}' go.mod)" >> "$GITHUB_OUTPUT"
+
       - uses: grafana/plugin-actions/build-plugin@main
         env:
           GRAFADRUID_USE_DOCKER: 0
         with:
           policy_token: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }}
           attestation: true
+          go-version: ${{ steps.go.outputs.version }}
