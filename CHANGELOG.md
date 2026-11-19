@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.10.0
+
+### Features
+
+- **Inline help for Apache Druid 39.0.0.** The SQL editor's function catalog is now generated from
+  the Druid 39.0.0 documentation (was 37.0.0). It adds `CBRT`, `COSH`, `SINH` and `TANH`, and notes
+  that `LONG` is accepted as a `CAST` alias for `BIGINT`.
+
+### Changes
+
+- Grafana plugin SDK for Go updated to v0.301.0, together with its transitive Go dependencies
+  (gRPC, OpenTelemetry, `golang.org/x/*`). The backend now requires Go 1.26.5 to build.
+- Frontend dependencies refreshed within their existing version ranges; `uuid` is forced to >= 11.1.1
+  to fix a high-severity advisory (GHSA-w5hq-g745-h8pq).
+- Development environment: Apache Druid 39.0.0, and the toolbox image moves to Node 22 and Go 1.26.5.
+  Node 22 is now the minimum for building the frontend.
+
 ## 1.9.0
 
 ### Features
